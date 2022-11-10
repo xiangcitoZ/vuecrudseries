@@ -67,6 +67,22 @@ export default class ServiceSeries{
             })
         })
     }
+    
+    //DETALLESPERSONAJES
+    loadPersonajeSerie(idSerie){
+        return new Promise(function(resolve){
+            var request = "/api/Series/PersonajesSerie/" + idSerie;
+            var url = Global.urlSeries + request;
+            var series = [];
+            axios.get(url).then(response =>{
+                series = response.data;                                                                                   
+                resolve(series);
+            })
+        })
+    }
+
+
+    
 }
 
 

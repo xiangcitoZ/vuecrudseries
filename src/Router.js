@@ -3,6 +3,7 @@ import HomeSeries from './components/HomeSeries.vue';
 import NuevoPersonaje from './components/NuevoPersonaje.vue';
 import ModificarSeries from './components/ModificarSeries.vue';
 import DetallesSeries from './components/DetallesSeries.vue';
+import DetallesPersonajes from './components/DetallesPersonajes.vue';
 
 const routes = [
     {
@@ -20,6 +21,10 @@ const routes = [
     ,
     {
         path: "/serie/:idserie", component: DetallesSeries
+    }
+    ,
+    {
+        path: "/personajes/:idpersonaje", component: DetallesPersonajes
     }
     
     
