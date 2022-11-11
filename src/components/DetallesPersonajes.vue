@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="width: 500px; margin: 0 auto">
         <h1>
             Detalles personajes
         </h1>

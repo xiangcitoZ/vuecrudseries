@@ -25,16 +25,16 @@
             <button class="btn btn-info" v-on:click.prevent="updatePersonaje()">Guardar cambios</button>
 
         </form>
-        <div >
+        <div  style="width: 500px; margin: 0 auto">
             <!-- PARA PINTAR LAS IMAGENES -->
             <div v-if="imagenSerie.length > 0">
-                <h1 style="color: blue"> {{nombreSerie}} </h1>
-                <img :src="imagenSerie" />
+                <h1 style="color: red"> {{nombreSerie}} </h1>
+                <img  style="width: 400px" :src="imagenSerie" />
             </div>
 
             <div v-if="imagenPersonaje.length > 0">
                 <h1 style="color: blue"> {{nombrePersonaje}} </h1>
-                <img :src="imagenPersonaje" />
+                <img style="width: 400px" :src="imagenPersonaje" />
             </div>
 
         </div>
@@ -54,7 +54,7 @@ export default {
             console.log(this.idSerie, this.idPersonaje);
             service.updatePersonaje(this.idSerie, this.idPersonaje).then(result => {
                 console.log(result);
-                this.$router.push("/");
+                this.$router.push("/personajes/"+this.idSerie);
             })
         },
 
