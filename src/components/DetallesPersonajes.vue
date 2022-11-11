@@ -5,8 +5,11 @@
         </h1>
         <div>
             <form method="post" v-on:submit.prevent="volver()" >
+            <br/>
             <button class="btn btn-warning">Volver</button>
-                <table class="table table-bordered table-warning">
+            <br/>
+                <table class="table table-bordered table-warning" 
+                style="width: 500px">
                     <thead>
                         <tr>
                             <th>Personaje</th>
@@ -48,11 +51,13 @@ const service = new ServiceSeries();
             }
         },
     methods:{
+            //METODO PARA VOLVER
            volver(){
                 this.idpersonaje = this.$route.params.idpersonaje; 
                 this.$router.push("/serie/"+ this.idpersonaje);
            },
             
+            //METODO PARA DEMOSTRAR LA TABLA
             loadPersonajeSerie(){
                 this.id = this.$route.params.idpersonaje;        
                 service.loadPersonajeSerie(this.id).then(result =>{
