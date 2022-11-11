@@ -44,7 +44,7 @@ export default {
     methods:{
             loadSerie(){
                 this.id = this.$route.params.idserie;
-                console.log(this.id)
+                
                 service.loadSerieID(this.id).then(result =>{
                 this.serie = result;
                 
@@ -53,9 +53,10 @@ export default {
             
             loadPersonajeSerie(){
                 this.id = this.$route.params.idserie;
-                console.log(this.id)
+                
                 service.loadPersonajeSerie(this.id).then(result =>{
                 this.tablaserie = result;
+                this.$router.push("/personajes/"+ this.id);
                 
             });
             }
