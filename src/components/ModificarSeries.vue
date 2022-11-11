@@ -6,7 +6,7 @@
         <form method="post">
 
             <label>Seleccione una serie: </label>
-            <select class="form-control" v-model="idSerie" v-on:change="pintarImagenSerie">
+            <select class="form-control" v-model="idSerie" v-on:change.prevent="pintarImagenSerie">
                 <option v-for="ser in series" :value="ser.idSerie" :key="ser.idSerie">
                     {{ser.nombre}}
                 </option>
@@ -14,7 +14,7 @@
             <br />
 
             <label>Seleccione un Personaje: </label>
-            <select class="form-control" v-model="idPersonaje" v-on:change="pintarImagenPersonaje">
+            <select class="form-control" v-model="idPersonaje" v-on:change.prevent="pintarImagenPersonaje">
                 <option v-for="per in personajes" :value="per.idPersonaje" :key="per.idPersonaje">
                     {{per.nombre}}
                 </option>
